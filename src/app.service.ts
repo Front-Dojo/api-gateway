@@ -16,4 +16,12 @@ export class AppService {
   getUserById(id: number) {
     return this.client.send({ role: 'user', cmd: 'get-by-id' }, id);
   }
+
+  health() {
+    return this.client.send({ role: 'user', cmd: 'health' }, {});
+  }
+
+  metrics() {
+    return this.client.send({ role: 'user', cmd: 'metrics' }, {});
+  }
 }

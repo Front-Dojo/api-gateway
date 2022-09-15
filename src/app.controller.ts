@@ -11,6 +11,16 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Get('/user/health')
+  health() {
+    return this.appService.health();
+  }
+
+  @Get('/user/metrics')
+  metrics() {
+    return this.appService.metrics();
+  }
+
   @Get('/user/:id')
   getById(@Param('id') id: number) {
     return this.appService.getUserById(id);
